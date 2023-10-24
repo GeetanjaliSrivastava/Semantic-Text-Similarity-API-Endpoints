@@ -12,8 +12,8 @@ class RequestModel(BaseModel):
 # Load the SentenceTransformer model outside of the API endpoint function
 model = SentenceTransformer('sentence-transformers/paraphrase-MiniLM-L12-v2')
 
-@app.post("/semantic_similarity")
-def semantic_similarity(request_data: RequestModel):
+@app.post("/")
+def root (request_data: RequestModel):
     text1 = request_data.text1
     text2 = request_data.text2
 
